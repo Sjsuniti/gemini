@@ -3,6 +3,7 @@ require('dotenv').config();
 const express = require('express');
 const bodyParser= require('body-parser');
 const app = express();
+const PORT = process.env.PORT || 3000;
 app.use(express.json());
 app.use(bodyParser.json());
 
@@ -40,6 +41,6 @@ app.get('/api/content', async(req,res)=>{
     }
 })
 
-app.listen(3000,()=>{
+app.listen(PORT,()=>{
     console.log('server is up & running on port 3000');
 })
